@@ -94,7 +94,7 @@ function Home() {
             </header>
 
             <div className="lux-results-grid">
-              {outcomes.map((item, index) => (
+              {outcomes.map((item) => (
                 <article
                   key={item.title}
                   className="lux-result-card"
@@ -116,7 +116,7 @@ function Home() {
             </header>
 
             <div className="lux-testimonial-grid">
-              {testimonials.map((item, index) => (
+              {testimonials.map((item) => (
                 <article
                   key={item.name}
                   className="lux-testimonial-card"
