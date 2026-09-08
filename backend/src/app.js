@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 import express from "express";
 import cors from "cors";
 import passport from "passport";
@@ -7,6 +10,7 @@ import authRouter from "./auth.js";
 import { getUserByEmail } from "./auth.js";
 import paymentRouter from "./payment.js";
 import chatRouter from "./routes/chat.route.js";
+import { postgresSsl } from "./postgresSsl.js";
 
 function getAllowedOrigins() {
   const configuredOrigins = (process.env.CORS_ORIGINS || "")
@@ -77,10 +81,17 @@ export function createApp() {
 
   const sessionStore = process.env.DATABASE_URL
     ? new PgSession({
-        conString: process.env.DATABASE_URL,
+        conObject: {
+          connectionString: process.env.DATABASE_URL,
+          ssl: postgresSsl(),
+        },
         createTableIfMissing: true,
       })
     : undefined;
+
+  const cookieSecure = process.env.SESSION_COOKIE_SECURE
+    ? process.env.SESSION_COOKIE_SECURE === "true"
+    : isProduction;
 
   const sessionMiddleware = session({
     store: sessionStore,
@@ -91,7 +102,7 @@ export function createApp() {
       maxAge: 30 * 24 * 60 * 60 * 1000,
       httpOnly: true,
       sameSite: "lax",
-      secure: isProduction,
+      secure: cookieSecure,
     },
   });
 
@@ -110,6 +121,26 @@ export function createApp() {
       runtime: "node",
     });
   });
+
+  const frontendDistPath = path.resolve(
+    path.dirname(fileURLToPath(import.meta.url)),
+    "../../frontend/dist"
+  );
+
+  if (fs.existsSync(frontendDistPath)) {
+    app.use(express.static(frontendDistPath, { index: false }));
+    app.use((req, res, next) => {
+      if (req.method !== "GET" && req.method !== "HEAD") {
+        return next();
+      }
+      if (req.path.startsWith("/api") || req.path.startsWith("/ws")) {
+        return next();
+      }
+      return res.sendFile(path.join(frontendDistPath, "index.html"), (err) => {
+        if (err) next(err);
+      });
+    });
+  }
 
   return {
     app,

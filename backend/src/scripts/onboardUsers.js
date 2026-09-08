@@ -1,6 +1,7 @@
 import pg from "pg";
 import { StreamChat } from "stream-chat";
 import { loadEnv } from "../env.js";
+import { postgresSsl } from "../postgresSsl.js";
 
 loadEnv();
 
@@ -22,9 +23,7 @@ if (!databaseUrl) {
 
 const db = new pg.Client({
   connectionString: databaseUrl,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  ssl: postgresSsl(databaseUrl),
 });
 
 async function onboardAllUsers() {

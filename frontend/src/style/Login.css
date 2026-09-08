@@ -47,6 +47,44 @@ body {
   width: min(100%, 380px);
 }
 
+.login-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #5c6977;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.login-back:hover {
+  color: #8b6a49;
+}
+
+.login-back:focus-visible {
+  outline: 2px solid rgba(188, 144, 96, 0.9);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.login-back-arrow {
+  display: inline-block;
+  font-size: 1.05rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.login-back:hover .login-back-arrow {
+  transform: translateX(-3px);
+}
+
 .login-kicker {
   display: inline-flex;
   align-items: center;

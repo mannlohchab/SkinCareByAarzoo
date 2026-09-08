@@ -1,109 +1,89 @@
-import React from 'react';
-import { SkinIcon, HeartIcon } from './Icons';
+import { PetalBlob } from './home/LandingArt'
+import { IsoIcon } from './home/IsoIcon'
+
+const exploreLinks = [
+  { href: '#about', label: 'About' },
+  { href: '#approach', label: 'Our Approach' },
+  { href: '#results', label: 'Results' },
+  { href: '#testimonials', label: 'Client Notes' },
+]
+
+const serviceLinks = [
+  { href: '#approach', label: 'Clinical Skincare' },
+  { href: '#approach', label: 'Nutridermatology' },
+  { href: '#approach', label: 'Barrier Restoration' },
+  { href: '#approach', label: 'Personalized Protocols' },
+]
 
 export function Footer() {
   return (
-    <footer style={{
-      backgroundColor: '#181310',
-      color: '#fffaf4',
-      padding: '3.5rem 2rem',
-      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-    }}>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        gap: '2rem',
-        maxWidth: '1280px',
-        margin: '0 auto',
-      }} className="footer-content">
-        
-        {/* Brand Section */}
-        <div style={{ maxWidth: '300px', minWidth: '250px' }} className="footer-brand">
-          <a href="/" style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            fontSize: '1.12rem',
-            fontWeight: 800,
-            color: '#fffaf4',
-            textDecoration: 'none',
-            marginBottom: '1rem',
-          }}>
-            <SkinIcon size={28} />
-            <span>SkinCare by Aarzoo</span>
+    <footer className="lux-footer">
+      <PetalBlob className="lux-art-footer-blob" />
+
+      <div className="home-luxury-shell lux-footer-row">
+        <div>
+          <a href="/" className="lux-footer-wordmark">
+            <IsoIcon name="shop" size={32} />
+            SkinCare by Aarzoo
           </a>
-          <p style={{ color: '#c9bdb4', lineHeight: 1.7, fontSize: '0.875rem' }}>
-            Clinical skin health that addresses root causes, not just surface symptoms. 
-            We combine clinical expertise with a root-cause approach to deliver long-term skin health.
+          <p className="lux-footer-blurb">
+            Clinical skin health that addresses root causes, not just surface symptoms. We combine
+            clinical expertise with a root-cause approach to deliver long-term skin health.
           </p>
         </div>
-        
-        {/* Quick Links */}
-        <div className="footer-section">
-          <h4 style={{ color: '#fffaf4', marginBottom: '1rem', fontWeight: 700 }}>Quick Links</h4>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <a href="#about" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>About</a>
-            <a href="#approach" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>Our Approach</a>
-            <a href="#results" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>Results</a>
-            <a href="#testimonials" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>Client Notes</a>
+
+        <div className="lux-footer-cols">
+          <div className="lux-footer-col">
+            <h4>
+              <IsoIcon name="home" className="lux-footer-col-iso" size={18} />
+              Explore
+            </h4>
+            <ul>
+              {exploreLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lux-footer-col">
+            <h4>Services</h4>
+            <ul>
+              {serviceLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lux-footer-col">
+            <h4>
+              <IsoIcon name="chat-heart" className="lux-footer-col-iso" size={18} />
+              Connect
+            </h4>
+            <ul>
+              <li>
+                <a href="mailto:skincare.by.aarzoo@gmail.com">skincare.by.aarzoo@gmail.com</a>
+              </li>
+              <li>
+                <a href="tel:+919217852889">+91 92178 52889</a>
+              </li>
+              <li>
+                <p>Available for consultations by appointment</p>
+              </li>
+            </ul>
           </div>
         </div>
-        
-        {/* Our Services */}
-        <div className="footer-section">
-          <h4 style={{ color: '#fffaf4', marginBottom: '1rem', fontWeight: 700 }}>Our Services</h4>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <a href="#approach" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>Clinical Skincare</a>
-            <a href="#approach" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>Nutridermatology</a>
-            <a href="#approach" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>Barrier Restoration</a>
-            <a href="#approach" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>Personalized Protocols</a>
-          </div>
-        </div>
-        
-        {/* Contact */}
-        <div className="footer-section">
-          <h4 style={{ color: '#fffaf4', marginBottom: '1rem', fontWeight: 700 }}>Contact</h4>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-            <a href="mailto:skincare.by.aarzoo@gmail.com" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>skincare.by.aarzoo@gmail.com</a>
-            <a href="tel:+919811658943" style={{ color: '#c9bdb4', textDecoration: 'none', fontSize: '0.875rem' }}>+91 92178 52889</a>
-            <p style={{ color: '#c9bdb4', fontSize: '0.875rem', marginTop: '0.5rem' }}>
-              Available for consultations by appointment
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      {/* Bottom Section */}
-      <div style={{ 
-        marginTop: '3rem', 
-        paddingTop: '2rem', 
-        borderTop: '1px solid rgba(255, 255, 255, 0.1)', 
-        color: '#92847a',
-        textAlign: 'center',
-        fontSize: '0.875rem'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
-          Made with <HeartIcon size={16} style={{ color: '#dc2626' }} /> for healthy skin
-        </div>
-        <p>© 2024 SkinCareByAarzoo. All rights reserved. | This is not routine skincare — it's clinical skin health.</p>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .footer-content {
-            flex-direction: column !important;
-            align-items: flex-start;
-          }
-          .footer-section {
-            width: 100%;
-          }
-          .footer-brand {
-            width: 100%;
-            max-width: 100% !important;
-          }
-        }
-      `}</style>
+      <div className="lux-footer-strip">
+        <div className="home-luxury-shell lux-footer-strip-row">
+          <span>© {new Date().getFullYear()} SkinCareByAarzoo. All rights reserved.</span>
+          <span>This is not routine skincare — it's clinical skin health.</span>
+        </div>
+      </div>
     </footer>
-  );
+  )
 }

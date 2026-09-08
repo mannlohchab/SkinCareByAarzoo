@@ -1,13 +1,12 @@
 import { Router } from "express";
 import razorpay from "razorpay"
 import pg from "pg"
+import { postgresSsl } from "./postgresSsl.js";
 const router = Router();
 // setup menu database
 const db = new pg.Client({
     connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false,
-    },
+    ssl: postgresSsl(),
 });
 function getRazorpayInstance() {
     if (!process.env.RAZORPAY_KEY_ID || !process.env.RAZORPAY_KEY_SECRET) {

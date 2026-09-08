@@ -12,6 +12,7 @@ import jwt from "jsonwebtoken";
 import Razorpay from "razorpay";
 import crypto from "crypto";
 import { createRealtimeEvent, emitRealtimeEvent } from "./websocket.js";
+import { postgresSsl } from "./postgresSsl.js";
 
 // Load environment variables
 loadEnv();
@@ -58,9 +59,7 @@ const BOOKING_STATUSES = new Set(["pending", "confirmed", "cancelled", "complete
 // connect to database
 const db = new pg.Client({
   connectionString: databaseUrl,
-  ssl: {
-    rejectUnauthorized: false
-  }
+  ssl: postgresSsl(databaseUrl),
 });
 
 const getUserByEmail = async (email) => {

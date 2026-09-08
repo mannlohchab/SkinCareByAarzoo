@@ -68,6 +68,10 @@ function Login() {
       <div className="login-layout">
         <div className="login-panel">
           <div className="login-card">
+            <button type="button" className="login-back" onClick={() => navigate('/')}>
+              <span className="login-back-arrow" aria-hidden="true">&larr;</span>
+              Back to home
+            </button>
             <a href="/" className="login-kicker">SkinCareByAarzoo</a>
             <h1 className="login-title">Welcome back</h1>
             <p className="login-subtitle">

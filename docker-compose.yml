@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-skincare}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-skincare}
+      POSTGRES_DB: ${POSTGRES_DB:-skincare}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-skincare} -d ${POSTGRES_DB:-skincare}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    image: ${APP_IMAGE:-ghcr.io/mannlohchab/skincarebyaarzoo:latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: 3000
+      DATABASE_URL: ${DATABASE_URL:-postgresql://skincare:skincare@postgres:5432/skincare}
+      DATABASE_SSL: ${DATABASE_SSL:-false}
+      SESSION_SECRET: ${SESSION_SECRET:-change-me-in-production}
+      SESSION_COOKIE_SECURE: ${SESSION_COOKIE_SECURE:-false}
+      TRUST_PROXY: ${TRUST_PROXY:-1}
+      FRONTEND_URL: ${FRONTEND_URL:-}
+      APP_URL: ${APP_URL:-}
+      CORS_ORIGINS: ${CORS_ORIGINS:-}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      RESEND_FROM_EMAIL: ${RESEND_FROM_EMAIL:-}
+      GETSTREAM_API_KEY: ${GETSTREAM_API_KEY:-}
+      GETSTREAM_API_SECRET: ${GETSTREAM_API_SECRET:-}
+      RAZORPAY_KEY_ID: ${RAZORPAY_KEY_ID:-}
+      RAZORPAY_KEY_SECRET: ${RAZORPAY_KEY_SECRET:-}
+
+volumes:
+  postgres_data:
