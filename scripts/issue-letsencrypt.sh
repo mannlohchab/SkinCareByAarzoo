@@ -11,15 +11,10 @@ if [ -f .env ]; then
   set +a
 fi
 
-EMAIL="${CERTBOT_EMAIL:-}"
+EMAIL="${CERTBOT_EMAIL:-skincare.by.aarzoo@gmail.com}"
 DOMAIN="${NGINX_DOMAIN:-skincarebyaarzoo.com}"
 
-if [ -z "$EMAIL" ]; then
-  echo "Set CERTBOT_EMAIL in .env (Let's Encrypt registration email)."
-  exit 1
-fi
-
-echo "Requesting Let's Encrypt cert for ${DOMAIN} and www.${DOMAIN}..."
+echo "Requesting Let's Encrypt cert for ${DOMAIN} and www.${DOMAIN} as ${EMAIL}..."
 docker compose run --rm --entrypoint certbot certbot certonly \
   --webroot -w /var/www/certbot \
   -d "$DOMAIN" -d "www.${DOMAIN}" \
