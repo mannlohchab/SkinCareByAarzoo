@@ -24,6 +24,7 @@ ENV VITE_API_URL=$VITE_API_URL \
 RUN npm run build --workspace frontend
 
 FROM node:22-bookworm-slim AS runtime
+LABEL org.opencontainers.image.source=https://github.com/mannlohchab/SkinCareByAarzoo
 WORKDIR /app
 
 ENV NODE_ENV=production \
