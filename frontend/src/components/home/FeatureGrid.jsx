@@ -5,67 +5,55 @@ import featureImageFour from '../../assets/feature4.jpeg'
 
 const features = [
   {
-    title: 'Root-cause analysis',
+    title: 'Acne-prone skin',
     description:
-      'Detailed intake and skin-pattern mapping to identify the triggers behind recurring concerns.',
-    cta: 'Explore diagnostics',
+      'Support for recurring breakouts through topical routine, nutrition, and the daily habits that keep inflammation cycling.',
     image: featureImageOne,
   },
   {
-    title: 'Personalized skincare plans',
+    title: 'Rosacea-prone skin',
     description:
-      'Custom morning and evening routines calibrated to your sensitivity profile and lifestyle pace.',
-    cta: 'View protocol design',
+      'A calmer, barrier-aware approach for redness-prone skin — focused on triggers, comfort, and long-term stability.',
     image: featureImageTwo,
   },
   {
-    title: 'Barrier restoration strategy',
+    title: 'Pigmentation concerns',
     description:
-      'Ingredient sequencing focused on calm recovery, hydration depth, and resilience-first progress.',
-    cta: 'See restoration flow',
+      'Guidance for uneven tone that looks beyond a single serum — routine, lifestyle, and consistency over quick correction.',
     image: featureImageThree,
   },
   {
-    title: 'Long-term skin health',
+    title: 'Barrier & skin longevity',
     description:
-      'A sustainable plan with ongoing review checkpoints to protect results and avoid cycle setbacks.',
-    cta: 'Understand outcomes',
+      'For compromised barriers and anyone focused on resilient, long-term skin health rather than a short-term glow.',
     image: featureImageFour,
   },
 ]
 
 export function FeatureGrid() {
   return (
-    <section id="approach" className="lux-section lux-feature-section">
+    <section id="clients" className="lux-section lux-feature-section">
       <div className="home-luxury-shell">
         <header className="lux-feature-header" data-reveal>
           <div>
-            <span className="lux-kicker">Our Method</span>
-            <h2>Refined care architecture for calm, radiant skin.</h2>
+            <span className="lux-kicker">Who I Work With</span>
+            <h2>Skin concerns I support, without a one-size routine.</h2>
           </div>
           <p>
-            Every recommendation is selected to be practical, elegant, and clinically sensible from
-            day one.
+            I support clients navigating acne-prone skin, rosacea-prone skin, pigmentation
+            concerns, compromised skin barriers, and those focused on long-term skin longevity.
           </p>
         </header>
 
         <div className="lux-feature-grid">
-          {features.map((feature, index) => (
-            <article
-              key={feature.title}
-              className="lux-feature-card"
-              data-reveal
-              style={{ '--reveal-delay': `${index * 0.08}s` }}
-            >
+          {features.map((feature) => (
+            <article key={feature.title} className="lux-feature-card">
               <div className="lux-feature-media">
                 <img src={feature.image} alt={feature.title} />
               </div>
               <div className="lux-feature-copy">
                 <h3>{feature.title}</h3>
                 <p>{feature.description}</p>
-                <a href="#results" className="lux-card-cta">
-                  {feature.cta}
-                </a>
               </div>
             </article>
           ))}

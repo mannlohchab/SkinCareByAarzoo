@@ -1,23 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 .home-luxury-page {
-  --lux-bg: #fbf7f1;
-  --lux-surface: #fffdf9;
-  --lux-surface-2: #f4eee6;
-  --lux-ink: #201915;
-  --lux-muted: #6e635c;
-  --lux-accent: #c4795f;
-  --lux-accent-deep: #8f4e3c;
-  --lux-sage: #697c66;
-  --lux-plum: #463141;
-  --lux-border: rgba(60, 48, 38, 0.14);
-  color: var(--lux-ink);
+  --lux-bg: #F5EDE4;
+  --lux-surface: #FFF8F1;
+  --lux-surface-2: #EBE0D3;
+  --lux-ink: #C1691E;
+  --lux-ink-deep: #B5651D;
+  --lux-muted: #4A2E1E;
+  --lux-accent: #C1691E;
+  --lux-accent-deep: #B5651D;
+  --lux-border: rgba(74, 46, 30, 0.16);
+  color: var(--lux-muted);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(251, 247, 241, 0.92) 42%, rgba(244, 238, 230, 0.86) 100%),
-    radial-gradient(circle at 12% 18%, rgba(105, 124, 102, 0.13), transparent 28%),
-    radial-gradient(circle at 86% 58%, rgba(143, 78, 60, 0.1), transparent 30%),
+    linear-gradient(180deg, rgba(255, 248, 241, 0.72) 0%, rgba(245, 237, 228, 0.94) 42%, rgba(235, 224, 211, 0.88) 100%),
+    radial-gradient(circle at 12% 18%, rgba(193, 105, 30, 0.1), transparent 28%),
+    radial-gradient(circle at 86% 58%, rgba(181, 101, 29, 0.08), transparent 30%),
     var(--lux-bg);
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-family: var(--font-body);
   overflow-x: clip;
 }
 
@@ -29,8 +26,9 @@
 .lux-kicker {
   display: inline-flex;
   align-items: center;
+  font-family: var(--font-body);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--lux-accent-deep);
@@ -50,9 +48,9 @@
 
 .lux-navbar.is-scrolled {
   padding: 10px 0;
-  background: rgba(250, 243, 236, 0.75);
+  background: rgba(245, 237, 228, 0.86);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(59, 37, 26, 0.09);
+  border-bottom: 1px solid rgba(74, 46, 30, 0.12);
 }
 
 .lux-navbar-row {
@@ -96,14 +94,24 @@
   line-height: 1.05;
 }
 
+.home-luxury-page h1,
+.home-luxury-page h2,
+.home-luxury-page h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
 .lux-brand-title {
+  font-family: var(--font-heading);
   font-size: 0.92rem;
   font-weight: 700;
   letter-spacing: 0.03em;
 }
 
 .lux-brand-subtitle {
+  font-family: var(--font-body);
   font-size: 0.67rem;
+  font-weight: 500;
   letter-spacing: 0.18em;
   opacity: 0.78;
   text-transform: uppercase;
@@ -141,7 +149,7 @@
 }
 
 .lux-navbar.is-scrolled .lux-nav-link {
-  color: #3f2e26;
+  color: var(--lux-muted);
 }
 
 .lux-nav-link:hover {
@@ -149,7 +157,8 @@
 }
 
 .lux-navbar.is-scrolled .lux-nav-link:hover {
-  background: rgba(178, 129, 107, 0.2);
+  background: rgba(193, 105, 30, 0.14);
+  color: var(--lux-ink-deep);
 }
 
 .lux-nav-cta {
@@ -160,9 +169,10 @@
   padding: 11px 18px;
   border: 1px solid rgba(255, 255, 255, 0.55);
   background: rgba(255, 255, 255, 0.94);
-  color: #362620;
+  color: var(--lux-ink-deep);
+  font-family: var(--font-body);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: transform 0.24s ease, box-shadow 0.24s ease;
@@ -182,16 +192,23 @@
   color: #fff;
   border-radius: 8px;
   padding: 9px 16px;
+  font-family: var(--font-body);
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .lux-navbar.is-scrolled .lux-nav-toggle {
-  color: #402f28;
-  border-color: rgba(78, 50, 37, 0.2);
-  background: rgba(255, 255, 255, 0.88);
+  color: var(--lux-muted);
+  border-color: rgba(74, 46, 30, 0.2);
+  background: rgba(255, 248, 241, 0.92);
+}
+
+.lux-navbar.is-scrolled .lux-nav-cta {
+  background: var(--lux-accent);
+  color: #F5EDE4;
+  border-color: var(--lux-ink-deep);
 }
 
 .lux-nav-backdrop {
@@ -238,7 +255,7 @@
   line-height: 0.9;
   letter-spacing: 0;
   color: #ffffff;
-  max-width: 10ch;
+  max-width: 12ch;
 }
 
 .lux-hero-content p {
@@ -263,18 +280,19 @@
   justify-content: center;
   padding: 13px 22px;
   border-radius: 8px;
+  font-family: var(--font-body);
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
 }
 
 .lux-btn-primary {
-  background: #fff7ee;
-  color: #2f211c;
-  border: 1px solid rgba(255, 255, 255, 0.58);
-  box-shadow: 0 16px 34px rgba(27, 18, 13, 0.2);
+  background: var(--lux-accent);
+  color: #F5EDE4;
+  border: 1px solid var(--lux-ink-deep);
+  box-shadow: 0 16px 34px rgba(74, 46, 30, 0.22);
 }
 
 .lux-btn-secondary {
@@ -320,6 +338,16 @@
   right: 12%;
 }
 
+.lux-section,
+#home,
+#about,
+#clients,
+#approach,
+#faq,
+#enroll {
+  scroll-margin-top: 96px;
+}
+
 .lux-section {
   padding: 88px 0;
 }
@@ -335,12 +363,55 @@
   align-items: end;
 }
 
+.lux-about-copy h2,
+.lux-feature-header h2,
+.lux-process-header h2,
+.lux-faq-header h2,
+.lux-enroll-header h2,
+.lux-story-card h2 {
+  color: var(--lux-ink);
+}
+
 .lux-about-copy h2 {
   margin-top: 14px;
   font-size: clamp(2.1rem, 4vw, 3.6rem);
   line-height: 0.98;
   letter-spacing: 0;
-  max-width: 14ch;
+  max-width: 16ch;
+}
+
+.lux-role {
+  margin-top: 14px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lux-accent-deep);
+}
+
+.lux-credential-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.lux-credential-list li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--lux-muted);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.lux-credential-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lux-accent);
 }
 
 .lux-about-copy p {
@@ -354,7 +425,7 @@
 .lux-about-panel {
   border: 1px solid var(--lux-border);
   border-radius: 8px;
-  background: rgba(255, 253, 249, 0.86);
+  background: rgba(255, 248, 241, 0.9);
   box-shadow: 0 20px 48px rgba(47, 30, 21, 0.08);
   padding: 26px;
   display: grid;
@@ -363,9 +434,16 @@
 
 .lux-principle-item {
   border-radius: 8px;
-  background: #fff;
-  border: 1px solid rgba(64, 38, 25, 0.1);
+  background: var(--lux-surface);
+  border: 1px solid var(--lux-border);
   padding: 18px;
+}
+
+.lux-principle-item h3,
+.lux-feature-copy h3,
+.lux-result-card h3,
+.lux-testimonial-card h3 {
+  color: var(--lux-ink-deep);
 }
 
 .lux-principle-item h3 {
@@ -397,7 +475,7 @@
   font-size: clamp(1.8rem, 3.3vw, 3rem);
   line-height: 1;
   letter-spacing: 0;
-  max-width: 15ch;
+  max-width: 16ch;
 }
 
 .lux-feature-header p {
@@ -428,19 +506,19 @@
 }
 
 .lux-feature-card:nth-child(1) {
-  background: #fff8f0;
+  background: #FFF8F1;
 }
 
 .lux-feature-card:nth-child(2) {
-  background: #f4f7ef;
+  background: #F3E8DC;
 }
 
 .lux-feature-card:nth-child(3) {
-  background: #fbf4f6;
+  background: #FAF0E6;
 }
 
 .lux-feature-card:nth-child(4) {
-  background: #f6f2ea;
+  background: #EBE0D3;
 }
 
 .lux-feature-media {
@@ -478,11 +556,202 @@
 .lux-card-cta {
   margin-top: 14px;
   display: inline-flex;
+  font-family: var(--font-body);
   font-size: 0.79rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--lux-accent-deep);
+}
+
+.lux-story {
+  padding-top: 24px;
+}
+
+.lux-story-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.lux-story-card,
+.lux-note-card,
+.lux-process-card,
+.lux-enroll-card {
+  border: 1px solid var(--lux-border);
+  border-radius: 8px;
+  background: rgba(255, 248, 241, 0.92);
+  box-shadow: 0 16px 34px rgba(47, 30, 21, 0.07);
+}
+
+.lux-story-card {
+  padding: 32px;
+}
+
+.lux-story-card h2 {
+  margin-top: 14px;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.05;
+  max-width: 16ch;
+}
+
+.lux-story-card p {
+  margin-top: 18px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.lux-story-aside {
+  display: grid;
+  gap: 16px;
+}
+
+.lux-note-card {
+  padding: 24px;
+}
+
+.lux-note-card h3,
+.lux-process-card h3,
+.lux-faq-item h3 {
+  color: var(--lux-ink-deep);
+}
+
+.lux-note-card h3 {
+  margin-top: 12px;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.lux-note-card p,
+.lux-process-card p,
+.lux-enroll-card p {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.lux-note-card-accent {
+  background: #F3E8DC;
+}
+
+.lux-process {
+  padding-top: 48px;
+}
+
+.lux-process-header h2,
+.lux-faq-header h2,
+.lux-enroll-header h2 {
+  margin-top: 12px;
+  font-size: clamp(1.8rem, 3.3vw, 3rem);
+  line-height: 1;
+  max-width: 16ch;
+}
+
+.lux-process-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lux-process-card {
+  padding: 24px;
+}
+
+.lux-process-card h3 {
+  margin-top: 14px;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.lux-faq {
+  padding-top: 40px;
+}
+
+.lux-faq-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.lux-faq-header p,
+.lux-enroll-header p {
+  margin-top: 16px;
+  max-width: 46ch;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.lux-faq-list {
+  display: grid;
+  gap: 10px;
+}
+
+.lux-faq-item {
+  border: 1px solid var(--lux-border);
+  border-radius: 8px;
+  background: rgba(255, 253, 249, 0.9);
+  padding: 8px 18px 8px;
+}
+
+.lux-faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lux-faq-trigger h3 {
+  font-size: 1.08rem;
+  line-height: 1.3;
+}
+
+.lux-faq-trigger span {
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--lux-accent-deep);
+}
+
+.lux-faq-item p {
+  padding-bottom: 16px;
+  color: var(--lux-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.lux-enroll {
+  padding-top: 28px;
+  padding-bottom: 80px;
+}
+
+.lux-enroll-grid {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.lux-enroll-card {
+  padding: 22px;
+}
+
+.lux-enroll-card a {
+  color: var(--lux-accent-deep);
+  font-weight: 500;
+}
+
+.lux-enroll-card-cta {
+  background: #F3E8DC;
 }
 
 .lux-results {
@@ -575,7 +844,7 @@
 }
 
 .lux-testimonial-quote {
-  color: #3e312c;
+  color: var(--lux-muted);
   font-size: 0.96rem;
   line-height: 1.65;
 }
@@ -592,8 +861,8 @@
 }
 
 .lux-footer {
-  border-top: 1px solid rgba(67, 41, 30, 0.12);
-  background: #f6ece4;
+  border-top: 1px solid rgba(74, 46, 30, 0.14);
+  background: #F5EDE4;
 }
 
 .lux-footer-row {
@@ -602,7 +871,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  color: #5d4b42;
+  color: var(--lux-muted);
   font-size: 0.84rem;
   letter-spacing: 0.01em;
 }
@@ -663,7 +932,7 @@
     margin-left: 0;
     border-radius: 8px;
     border: 1px solid rgba(73, 44, 30, 0.16);
-    background: rgba(250, 244, 238, 0.96);
+    background: rgba(245, 237, 228, 0.96);
     backdrop-filter: blur(12px);
     padding: 18px;
     display: none;
@@ -685,7 +954,7 @@
   }
 
   .lux-nav-link {
-    color: #402f28;
+    color: var(--lux-muted);
     background: rgba(255, 255, 255, 0.88);
     text-align: center;
   }
@@ -713,10 +982,14 @@
     pointer-events: auto;
   }
 
-  .lux-about-grid {
+  .lux-about-grid,
+  .lux-story-grid,
+  .lux-faq-layout {
     grid-template-columns: 1fr;
   }
 
+  .lux-process-grid,
+  .lux-enroll-grid,
   .lux-results-grid {
     grid-template-columns: 1fr;
   }
@@ -824,9 +1097,24 @@
 
   .lux-about-copy h2,
   .lux-feature-header h2,
+  .lux-story-card h2,
+  .lux-process-header h2,
+  .lux-faq-header h2,
+  .lux-enroll-header h2,
   .lux-results-header h2,
   .lux-testimonials-header h2 {
     max-width: 100%;
+  }
+
+  .lux-story-card,
+  .lux-note-card,
+  .lux-process-card,
+  .lux-enroll-card {
+    padding: 20px;
+  }
+
+  .lux-enroll {
+    padding-bottom: 56px;
   }
 
   .lux-about-panel {

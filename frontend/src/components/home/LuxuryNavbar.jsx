@@ -5,9 +5,9 @@ import logo from '../../assets/logo.svg'
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
-  { href: '#approach', label: 'Approach' },
-  { href: '#results', label: 'Results' },
-  { href: '#testimonials', label: 'Reviews' },
+  { href: '#approach', label: 'How It Works' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#enroll', label: 'Before You Enroll' },
 ]
 
 export function LuxuryNavbar() {
@@ -37,7 +37,7 @@ export function LuxuryNavbar() {
           </span>
           <span className="lux-brand-copy">
             <span className="lux-brand-title">SkinCare by Aarzoo</span>
-            <span className="lux-brand-subtitle">Clinical Luxury</span>
+            <span className="lux-brand-subtitle">Skin Consultant</span>
           </span>
         </Link>
 

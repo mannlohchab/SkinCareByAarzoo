@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
 
 *{
     margin:0;
@@ -10,12 +10,12 @@
 
 :root {
   /* Colors */
-  --color-primary-blue: #2563EB;
-  --color-deep-blue: #1E3A8A;
-  --color-background: #FFFFFF;
-  --color-light-background: #F5F7FF;
-  --color-text: #0A0A0A;
-  --color-border: #000000;
+  --color-primary-blue: #C1691E;
+  --color-deep-blue: #B5651D;
+  --color-background: #F5EDE4;
+  --color-light-background: #FFF8F1;
+  --color-text: #4A2E1E;
+  --color-border: #4A2E1E;
   
   /* Brutalist border */
   --brutalist-border: 3px solid var(--color-border);
@@ -24,17 +24,43 @@
   --brutalist-shadow: 6px 6px 0px black;
   
   /* Typography */
-  --font-sans: 'Roboto Mono', 'Courier New', monospace;
-  --font-mono: 'Roboto Mono', 'Courier New', monospace;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-body);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+body, p, button, span {
+  font-family: var(--font-body);
+}
+
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
+  font-weight: 400;
   background-color: var(--color-background);
   color: var(--color-text);
   line-height: 1.6;
+}
+
+.lux-btn,
+.lux-nav-cta,
+.lux-nav-toggle,
+.lux-card-cta,
+.login-submit,
+.login-secondary,
+.signup-submit,
+.signup-secondary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }

@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import heroImage from '../../assets/hero.jpg'
 
 const floatingHighlights = [
-  'Personalized protocols',
-  'Clinical approach',
+  'Skin nutrition',
+  'Lifestyle guidance',
 ]
 
 export function HeroSection() {
@@ -16,19 +16,20 @@ export function HeroSection() {
       <div className="lux-hero-overlay" aria-hidden="true" />
 
       <div className="home-luxury-shell lux-hero-content" data-reveal>
-        <span className="lux-kicker lux-kicker-light">Clinical Skin Intelligence</span>
-        <h1>Reset your skin at the root.</h1>
+        <span className="lux-kicker lux-kicker-light">Skin Consultant</span>
+        <h1>Skin health that lasts.</h1>
         <p>
-          Move beyond random products with a premium, evidence-led routine built for long-term
-          skin integrity and visible confidence.
+          I combine topical skincare with skin nutrition and lifestyle guidance to support
+          long-term skin health — addressing the everyday habits that show up on your skin,
+          not just the surface routine.
         </p>
 
         <div className="lux-hero-actions">
           <Link to="/signup" className="lux-btn lux-btn-primary">
-            Start Your Journey
+            Begin Your Program
           </Link>
           <a href="#approach" className="lux-btn lux-btn-secondary">
-            See Our Method
+            How It Works
           </a>
         </div>
       </div>

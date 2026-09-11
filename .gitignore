@@ -10,3 +10,7 @@ backend/.env
 backend/.env.*
 backend/env
 .postgres-data/
+
+# AI editor config
+.cursor/
+.claude/

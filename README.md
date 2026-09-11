@@ -41,3 +41,8 @@ docker compose up -d
 ```
 
 Set the same variables plus `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB` and `NGINX_DOMAIN` in the compose environment. The app image is published to GHCR by the GitHub Actions workflow on push to `main`.
+
+
+
+
+COMPLETED
